@@ -1,0 +1,25 @@
+<div class="container text-center">
+    <div class="container">
+        <h2>Images</h2>
+    </div>
+    <div class="container">
+<div class="container">
+    <p><input type="text" id="username" name="username" placeholder="Search images" [(ngModel)]="username" class="form-control"></p>
+    <button mat-raised-button color="primary" (click)="clickme()">Search</button>
+<br>
+    <div class="container">
+        <div class="row">
+            <div class="col-4 mb-2" *ngFor="let g of total | paginate: { itemsPerPage: 9, currentPage: p };">
+                <div class="card" style="height: 300px; width:300px">
+                    <img src="{{g.url}}" alt="" style="height: 100%; width:100%">
+                </div>
+            </div>
+            <div class="container mt-2">
+                <div class="d-flex justify-content-center">
+                <pagination-controls (pageChange)="p = $event" *ngIf="pagination"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
